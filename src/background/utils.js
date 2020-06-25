@@ -68,6 +68,7 @@ export function clearPath(path, isDir = false) {
 
     let p = path.replace(/^\./, '_'); // первый символ - точка (https://music.yandex.ru/album/2289231/track/20208868)
 
+    // eslint-disable-next-line quotes
     p = p.replace(/"/g, "''"); // двойные кавычки в одинарные
     p = p.replace(/\t/g, ' '); // табы в пробелы (https://music.yandex.ru/album/718010/track/6570232)
     p = p.replace(unsafeChars, '');

@@ -2,7 +2,7 @@ import md5 from 'blueimp-md5';
 
 const options = {
     headers: {
-        'X-Retpath-Y': encodeURIComponent('https://music.yandex.ru/')
+        'X-Retpath-Y': 'https://music.yandex.ru/'
     },
     redirect: 'error',
     credentials: 'include'
@@ -47,7 +47,7 @@ export default class Yandex {
     }
 
     getArtist(artistId) {
-        const url = `${this.baseUrl}/handlers/artist.jsx?artist=${artistId}&what=`;
+        const url = `${this.baseUrl}/handlers/artist.jsx?artist=${artistId}&dir=&what=`;
         return Promise.all([
             fetch(`${url}albums`, options),
             fetch(`${url}tracks`, options)
